@@ -15,6 +15,7 @@ namespace leetcode.problems
             var test = GenerateParenthesis(3);
         }
 
+        // O(2^n)
         public IList<string> GenerateParenthesis(int n)
         {
             return GenerateParenthesisRec(0, n, "");
@@ -39,33 +40,33 @@ namespace leetcode.problems
             return ret;
         }
 
+        // ²»ÕıÈ·
+        //public IList<string> GenerateParenthesis2(int n)
+        //{
+        //    var ret = new List<string>();
+        //    if (n == 0)
+        //    {
+        //        return ret;
+        //    }
+        //    else if (n == 1)
+        //    {
+        //        ret.Add("()");
+        //    }
+        //    else
+        //    {
+        //        var list = GenerateParenthesis(n - 1);
+        //        foreach (var item in list)
+        //        {
+        //            var left = "()" + item;
+        //            ret.Add(left);
+        //            var right = item + "()";
+        //            if (right != left)
+        //                ret.Add(right);
+        //            ret.Add($"({item})");
+        //        }
+        //    }
 
-        public IList<string> GenerateParenthesis2(int n)
-        {
-            var ret = new List<string>();
-            if (n == 0)
-            {
-                return ret;
-            }
-            else if (n == 1)
-            {
-                ret.Add("()");
-            }
-            else
-            {
-                var list = GenerateParenthesis(n - 1);
-                foreach (var item in list)
-                {
-                    var left = "()" + item;
-                    ret.Add(left);
-                    var right = item + "()";
-                    if (right != left)
-                        ret.Add(right);
-                    ret.Add($"({item})");
-                }
-            }
-
-            return ret;
-        }
+        //    return ret;
+        //}
     }
 }
